@@ -7,7 +7,6 @@ import "fmt"
 // See: https://help.shopify.com/api/reference/refund
 type RefundService interface {
 	List(int64, interface{}) ([]Refund, error)
-	ListWithPagination(options interface{}) ([]Refund, *Pagination, error)
 	Count(int64, interface{}) (int, error)
 	Get(int64, int64, interface{}) (*Refund, error)
 	Create(int64, Refund) (*Refund, error)

@@ -95,6 +95,7 @@ type Client struct {
 	Webhook                    WebhookService
 	Variant                    VariantService
 	Image                      ImageService
+	Refund 					   RefundService
 	Transaction                TransactionService
 	Theme                      ThemeService
 	Asset                      AssetService
@@ -271,6 +272,7 @@ func NewClient(app App, shopName, token string, opts ...Option) *Client {
 	c.Webhook = &WebhookServiceOp{client: c}
 	c.Variant = &VariantServiceOp{client: c}
 	c.Image = &ImageServiceOp{client: c}
+	c.Refund = &RefundServiceOp{client: c}
 	c.Transaction = &TransactionServiceOp{client: c}
 	c.Theme = &ThemeServiceOp{client: c}
 	c.Asset = &AssetServiceOp{client: c}
