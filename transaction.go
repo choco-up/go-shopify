@@ -7,6 +7,7 @@ import "fmt"
 // See: https://help.shopify.com/api/reference/transaction
 type TransactionService interface {
 	List(int64, interface{}) ([]Transaction, error)
+	ListWithPagination(options interface{}) ([]Transaction, *Pagination, error)
 	Count(int64, interface{}) (int, error)
 	Get(int64, int64, interface{}) (*Transaction, error)
 	Create(int64, Transaction) (*Transaction, error)
@@ -34,6 +35,26 @@ func (s *TransactionServiceOp) List(orderID int64, options interface{}) ([]Trans
 	resource := new(TransactionsResource)
 	err := s.client.Get(path, resource, options)
 	return resource.Transactions, err
+}
+
+// ListWithPagination lists transactions and return pagination to retrieve next/previous results.
+func (s *TransactionServiceOp) ListWithPagination(options interface{}) ([]Transaction, *Pagination, error) {
+	path := fmt.Sprintf("%s.json", customersBasePath)
+	resource := new(TransactionsResource)
+	headers, err := s.client.createAndDoGetHeaders("GET", path, nil, options, resource)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	// Extract pagination info from header
+	linkHeader := headers.Get("Link")
+
+	pagination, err := extractPagination(linkHeader)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	return resource.Transactions, pagination, nil
 }
 
 // Count transactions
