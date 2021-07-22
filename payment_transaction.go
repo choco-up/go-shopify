@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-const paymentTransactionBasePath = "shopify_payments/balance"
+const paymentTransactionBasePath = "shopify_payments/balance/transactions"
 const paymentTransactionResourceName = "transactions"
 
 // linkRegex is used to extract pagination links from product search results.
