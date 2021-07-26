@@ -98,6 +98,7 @@ type Client struct {
 	Refund 					   RefundService
 	Transaction                TransactionService
 	PaymentTransaction         PaymentTransactionService
+	TenderTransaction		   TenderTransactionService
 	Theme                      ThemeService
 	Asset                      AssetService
 	ScriptTag                  ScriptTagService
@@ -276,6 +277,7 @@ func NewClient(app App, shopName, token string, opts ...Option) *Client {
 	c.Refund = &RefundServiceOp{client: c}
 	c.Transaction = &TransactionServiceOp{client: c}
 	c.PaymentTransaction = &PaymentTransactionServiceOp{client: c}
+	c.TenderTransaction = &TenderTransactionServiceOp{client: c}
 	c.Theme = &ThemeServiceOp{client: c}
 	c.Asset = &AssetServiceOp{client: c}
 	c.ScriptTag = &ScriptTagServiceOp{client: c}
