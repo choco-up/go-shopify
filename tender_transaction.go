@@ -25,7 +25,7 @@ type TenderTransactionServiceOp struct {
 type TenderTransaction struct {
 	ID							int64		`json:"id,omitempty"`
 	OrderID						int64		`json:"order_id,omitempty"`
-	Amount						int64		`json:"amount"`
+	Amount						string		`json:"amount"`
 	Currency					string		`json:"currency,omitempty"`
 	UserID						*int64		`json:"user_id,omitempty"`
 	Test						bool		`json:"test,omitempty"`
