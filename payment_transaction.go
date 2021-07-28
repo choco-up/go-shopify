@@ -29,7 +29,7 @@ type PaymentTransaction struct {
 	PayoutID					int64		`json:"payout_id,omitempty"`
 	PayoutStatus				string		`json:"payout_status,omitempty"`
 	Currency					string		`json:"currency,omitempty"`
-	Amount 						int64		`json:"amount,omitempty"`
+	Amount 						string		`json:"amount,omitempty"`
 	Fee							int64		`json:"fee,omitempty"`
 	Net							int64		`json:"net,omitempty"`
 	SourceID					int64		`json:"source_id,omitempty"`
