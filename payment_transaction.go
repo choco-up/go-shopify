@@ -27,15 +27,15 @@ type PaymentTransaction struct {
 	Type						string		`json:"type,omitempty"`
 	Test						bool		`json:"test,omitempty"`
 	PayoutID					int64		`json:"payout_id,omitempty"`
-	PayoutStatus				int64		`json:"payout_status,omitempty"`
+	PayoutStatus				string		`json:"payout_status,omitempty"`
 	Currency					string		`json:"currency,omitempty"`
 	Amount 						int64		`json:"amount,omitempty"`
 	Fee							int64		`json:"fee,omitempty"`
 	Net							int64		`json:"net,omitempty"`
 	SourceID					int64		`json:"source_id,omitempty"`
 	SourceType					string		`json:"source_type,omitempty"`
-	SourceOrderTransactionID	int64		`json:"source_order_transaction_id.omitempty"`
 	SourceOrderID				int64		`json:"source_order_id.omitempty"`
+	SourceOrderTransactionID	int64		`json:"source_order_transaction_id.omitempty"`
 	ProcessedAt					*time.Time	`json:"processed_at,omitempty"`
 }
 
