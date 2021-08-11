@@ -34,8 +34,8 @@ type PaymentTransaction struct {
 	Net							string		`json:"net,omitempty"`
 	SourceID					int64		`json:"source_id,omitempty"`
 	SourceType					string		`json:"source_type,omitempty"`
-	SourceOrderID				int64		`json:"source_order_id.omitempty"`
-	SourceOrderTransactionID	int64		`json:"source_order_transaction_id.omitempty"`
+	SourceOrderID				int64		`json:"source_order_id,omitempty"`
+	SourceOrderTransactionID	int64		`json:"source_order_transaction_id,omitempty"`
 	ProcessedAt					*time.Time	`json:"processed_at,omitempty"`
 }
 
