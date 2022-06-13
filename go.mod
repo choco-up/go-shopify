@@ -1,4 +1,4 @@
-module github.com/choco-up/go-shopify
+module github.com/choco-up/go-shopify/v3
 
 go 1.18
 
